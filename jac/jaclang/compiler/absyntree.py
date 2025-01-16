@@ -1041,6 +1041,7 @@ class ModulePath(AstSymbolNode):
                         break
                 if not relative_path:
                     break
+        print(f"Resolved {target} to {relative_path}")
         return relative_path
 
     def normalize(self, deep: bool = False) -> bool:
