@@ -1032,7 +1032,7 @@ class ModulePath(AstSymbolNode):
             search_path = base_path
 
             while not relative_path:
-                for root, _, files in os.walk(search_path):
+                for root, _, files in os.walk(os.getenv("JACPATH")):
                     for file in files:
                         if file == actual_parts[-1] + ".jac":
                             relative_path = os.path.join(root, file)
